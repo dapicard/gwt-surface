@@ -1,0 +1,99 @@
+@CHARSET "UTF-8";
+
+@external surfacePushButton;
+.surfacePushButton {
+	height: 29px;
+	display: inline-block;
+	padding-left: 7px;
+	padding-right: 7px;
+	position: relative;
+}
+
+
+
+@url buttonBg buttonBackground;
+.surfacePushButton-up-hovering {
+	background-image: buttonBg;
+	background-repeat: repeat-x;
+}
+@url buttonLeft leftBorder;
+.surfacePushButton-up-hovering .surface-DecoratedButton-LeftBorder {
+	background-image: buttonLeft;
+	position: absolute;
+	height: 100%;
+	width: 6px;
+	left: 0px;
+}
+@url buttonRight rightBorder;
+.surfacePushButton-up-hovering .surface-DecoratedButton-RightBorder {
+	background-image: buttonRight;
+	position: absolute;
+	height: 100%;
+	width: 6px;
+	right: 0px;
+}
+
+
+
+.surfacePushButton-down {
+	background-image: buttonBg;
+	background-repeat: repeat-x;
+}
+.surfacePushButton-down .surface-DecoratedButton-LeftBorder {
+	background-image: buttonLeft;
+	position: absolute;
+	height: 100%;
+	width: 6px;
+	left: 0px;
+}
+.surfacePushButton-down .surface-DecoratedButton-RightBorder {
+	background-image: buttonRight;
+	position: absolute;
+	height: 100%;
+	width: 6px;
+	right: 0px;
+}
+
+.surfacePushButton-down-hovering {
+	background-image: buttonBg;
+	background-repeat: repeat-x;
+}
+.surfacePushButton-down-hovering .surface-DecoratedButton-LeftBorder {
+	background-image: buttonLeft;
+	position: absolute;
+	height: 100%;
+	width: 6px;
+	left: 0px;
+}
+.surfacePushButton-down-hovering .surface-DecoratedButton-RightBorder {
+	background-image: buttonRight;
+	position: absolute;
+	height: 100%;
+	width: 6px;
+	right: 0px;
+}
+
+
+
+.surfacePushButton .gwt-Image {
+	height: 29px !important;
+	background-position: center center !important;
+}
+.surfacePushButton-up-disabled .gwt-Image {
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}
+
+.surfaceDiv, .surfaceDiv div {
+	display: inline-block;
+}
+
+.surfaceDiv {
+	height: 19px;
+	position: relative;
+}
+
+.separator {
+	margin-left: 3px;
+	margin-right: 3px;
+}

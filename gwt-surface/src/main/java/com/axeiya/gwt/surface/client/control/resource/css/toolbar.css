@@ -1,0 +1,15 @@
+
+.firstLine {
+	height: 29px;
+}
+
+.secondLine {
+	height: 29px;
+	background-color: #EEEEEE;
+}
+
+.label {
+	margin-left: 5px;
+	margin-right: 2px;
+	color: #555555;
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 1.7.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/1.7.0/distro-source/core/src/gwt-module.dtd">
+<module rename-to='surface'>
+	<!-- Inherit the core Web Toolkit stuff. -->
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name='com.google.gwt.user.UserAgent' />
+
+	<!-- Other module inherits -->
+	<inherits name='com.google.gwt.xml.XML' />
+	
+	<!-- Specify the paths for translatable code -->
+	<source path='client' />
+	<public path="public" />
+	<script src="rangy-core.js" />
+	
+  <!-- IE-specific implementation -->
+  <replace-with
+    class="com.axeiya.gwt.surface.client.surfacetextarea.SurfaceTextAreaImplIE">
+    <when-type-is
+      class="com.axeiya.gwt.surface.client.surfacetextarea.SurfaceTextAreaImpl" />
+    <any>
+      <when-property-is name="user.agent" value="ie6" />
+      <when-property-is name="user.agent" value="ie8" />
+      <when-property-is name="user.agent" value="ie9" />
+    </any>
+  </replace-with>
+
+  <!-- Mozilla-specific implementation -->
+  <replace-with
+    class="com.axeiya.gwt.surface.client.surfacetextarea.SurfaceTextAreaImplMozilla">
+    <when-type-is
+      class="com.axeiya.gwt.surface.client.surfacetextarea.SurfaceTextAreaImpl" />
+    <when-property-is name="user.agent" value="gecko1_8" />
+  </replace-with>
+
+  <!-- Safari-specific implementation -->
+  <replace-with
+    class="com.axeiya.gwt.surface.client.surfacetextarea.SurfaceTextAreaImplSafari">
+    <when-type-is
+      class="com.axeiya.gwt.surface.client.surfacetextarea.SurfaceTextAreaImpl" />
+    <any>
+      <when-property-is name="user.agent" value="safari" />
+    </any>
+  </replace-with>
+
+  <!-- Opera-specific implementation -->
+  <replace-with
+    class="com.axeiya.gwt.surface.client.surfacetextarea.SurfaceTextAreaImplOpera">
+    <when-type-is
+      class="com.axeiya.gwt.surface.client.surfacetextarea.SurfaceTextAreaImpl" />
+    <any>
+      <when-property-is name="user.agent" value="opera" />
+    </any>
+  </replace-with>
+  
+  <replace-with class="com.axeiya.gwt.surface.client.util.DOMUtil.DOMUtilImplIE">
+  	<when-type-is class="com.axeiya.gwt.surface.client.util.DOMUtil.DOMUtilImpl"/>
+  	<any>
+  		<when-property-is name="user.agent" value="ie6"/>
+  		<when-property-is name="user.agent" value="ie8"/>
+  	</any>
+  </replace-with>
+  
+  <replace-with class="com.axeiya.gwt.surface.client.util.DOMUtil.DOMUtilImpl">
+  	<when-type-is class="com.axeiya.gwt.surface.client.util.DOMUtil.DOMUtilImpl"/>
+  	<any>
+  		<when-property-is name="user.agent" value="ie9"/>
+  	</any>
+  </replace-with>
+
+</module>
