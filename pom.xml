@@ -7,7 +7,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<version.gwt>2.5.0</version.gwt>
+		<version.gwt>2.5.1</version.gwt>
 		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -56,6 +56,22 @@
 					<configuration>
 						<source>1.6</source>
 						<target>1.6</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>gwt-maven-plugin</artifactId>
+					<version>${version.gwt}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>compile</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<style>PRETTY</style>
+						<draftCompile>true</draftCompile>
 					</configuration>
 				</plugin>
 			</plugins>

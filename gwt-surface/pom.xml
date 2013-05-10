@@ -13,7 +13,6 @@
 	</parent>
 
 	<properties>
-		<version.gwt>2.5.0</version.gwt>
 	</properties>
 
 	<dependencies>

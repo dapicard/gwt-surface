@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>gwt-surface-sample</artifactId>
 	<packaging>war</packaging>
-	
-	
+
+
 	<parent>
 		<groupId>com.axeiya.gwt.surface</groupId>
 		<artifactId>gwt-surface-parent</artifactId>
@@ -28,16 +28,16 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-			</resource>
-			<resource>
-				<!-- We need to include the source files in the generated JAR because 
-					they are needed by the GWT module that depends on this as the GWT compiler 
-					needs the sources to generate the JS files. -->
-				<directory>src/main/java</directory>
-			</resource>
-		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<configuration>
+					<modules>
+						<module>com.axeiya.gwt.surface.sample.SurfaceSample</module>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 </project>
